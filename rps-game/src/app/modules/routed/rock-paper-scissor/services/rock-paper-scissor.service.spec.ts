@@ -1,14 +1,10 @@
 import { RockPaperScissorTurn } from './../entities/rock-paper-scissor-turn';
 import { DRAW, PLAYER_2_WINS, PLAYER_1_WINS } from './../constants/rock-player-scissor-turn.constants';
-import { RockPaperScissorService } from './rock-paper-scissor.service';
 import { RockPaperScissor } from '../entities/rock-paper-scissor';
 
-describe('Rock paper scissor service test', () => {
+describe('Rock paper scissor turn test', () => {
 
     describe('Check turn result test', () => {
-
-        const service = new RockPaperScissorService();
-
 
         const testCases = [
             {
@@ -62,11 +58,11 @@ describe('Rock paper scissor service test', () => {
         testCases.forEach((testCase) => {
             it('should display correctly which player has won the turn', () => {
 
-                expect(service.checkTurnResult(
+                expect(
                     new RockPaperScissorTurn({
                         player1: testCase.player1,
                         player2: testCase.player2
-                    }))
+                    }).result
                 ).toBe(testCase.result);
             });
         });

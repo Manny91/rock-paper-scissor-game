@@ -1,4 +1,3 @@
-import { RockPaperScissorService } from './services/rock-paper-scissor.service';
 import { RockPaperScissorState } from './entities/rock-paper-scissor-state';
 import { RockPaperScissorActions } from './actions/rock-paper-scissor.action';
 import { NgModule } from '@angular/core';
@@ -27,8 +26,7 @@ import { StoreModule } from '@ngrx/store';
         RockPaperScissorComponent
     ],
     providers: [
-        RockPaperScissorActions,
-        RockPaperScissorService
+        RockPaperScissorActions
     ]
 })
 export class RockPaperScissorModule {

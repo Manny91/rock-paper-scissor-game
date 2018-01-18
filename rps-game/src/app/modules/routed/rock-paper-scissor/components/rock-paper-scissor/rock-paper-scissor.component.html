@@ -4,16 +4,16 @@
     </h1>
 
 
-    <div >
-        <div *ngIf="rockPaperScissorTurn.player1 !== undefined">
+    <div *ngIf="rockPaperScissorTurn">
+        <div>
             You played: {{rockPaperScissorTurn.player1ToString()}}
         </div>
-        <div *ngIf="rockPaperScissorTurn.player2 !== undefined">
+        <div>
             Computer played: {{rockPaperScissorTurn.player2ToString()}}
         </div>
 
         <div>
-            {{turnResult}}
+            {{rockPaperScissorTurn.result}}
         </div>
     </div>
 

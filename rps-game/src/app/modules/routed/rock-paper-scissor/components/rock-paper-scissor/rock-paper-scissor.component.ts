@@ -4,7 +4,6 @@ import { RockPaperScissorActions } from './../../actions/rock-paper-scissor.acti
 import { RockPaperScissor } from './../../entities/rock-paper-scissor';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { RockPaperScissorService } from '../../services/rock-paper-scissor.service';
 
 @Component({
     selector: 'app-rock-paper-scissor',
@@ -20,24 +19,19 @@ export class RockPaperScissorComponent {
 
     constructor(
         public rockPaperScissorActions: RockPaperScissorActions,
-        public store: Store<any>,
-        public rockPaperScissorService: RockPaperScissorService
+        public store: Store<any>
     ) {
-        this.rockPaperScissorTurn = new RockPaperScissorTurn({});
         this.store.select('rockPaperScissor').subscribe(this.loadRockPaperScissor);
     }
 
     private loadRockPaperScissor = (rockPaperScissorState: RockPaperScissorState) => {
         if (rockPaperScissorState.items.length > 0 ) {
             this.rockPaperScissorTurn = rockPaperScissorState.items[rockPaperScissorState.items.length - 1];
-            this.turnResult = this.rockPaperScissorService.checkTurnResult(this.rockPaperScissorTurn);
         }
     }
 
     public play(rockPaperScissor: RockPaperScissor) {
-
-        const computerRandomValue = this.rockPaperScissorService.generateRandom();
-        const turnPlayed = new RockPaperScissorTurn({player1: rockPaperScissor, player2: computerRandomValue});
+        const turnPlayed = new RockPaperScissorTurn({player1: rockPaperScissor});
         this.store.dispatch(this.rockPaperScissorActions.rockPaperScissorPlayed(turnPlayed));
     }
 }

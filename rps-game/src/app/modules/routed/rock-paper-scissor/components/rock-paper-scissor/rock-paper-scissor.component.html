@@ -1,0 +1,32 @@
+<div>
+    <h1>
+        Rock Paper Scissor game!
+    </h1>
+
+
+    <div >
+        <div *ngIf="rockPaperScissorTurn.player1 !== undefined">
+            You played: {{rockPaperScissorTurn.player1ToString()}}
+        </div>
+        <div *ngIf="rockPaperScissorTurn.player2 !== undefined">
+            Computer played: {{rockPaperScissorTurn.player2ToString()}}
+        </div>
+
+        <div>
+            {{turnResult}}
+        </div>
+    </div>
+
+
+    <button (click)="play(rockValue)">
+        Rock
+    </button>
+
+    <button (click)="play(paperValue)">
+        Paper
+    </button>
+
+    <button (click)="play(scissorValue)">
+        Scissor
+    </button>
+</div>

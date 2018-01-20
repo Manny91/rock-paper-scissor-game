@@ -1,32 +1,41 @@
-<div>
+<div class="container title">
+
     <h1>
-        Rock Paper Scissor game!
+        Rock Paper Scissor game
     </h1>
 
-
+</div>
+<div class="container result">
     <div *ngIf="rockPaperScissorTurn">
-        <div>
-            You played: {{rockPaperScissorTurn.player1ToString()}}
-        </div>
-        <div>
-            Computer played: {{rockPaperScissorTurn.player2ToString()}}
-        </div>
-
-        <div>
+        <div class="turn-result-label">
             {{rockPaperScissorTurn.result}}
         </div>
+
+        <div>
+            You played:
+            <span class="played">{{rockPaperScissorTurn.player1ToString()}}</span>
+        </div>
+        <div>
+            Computer played:
+            <span class="played">{{rockPaperScissorTurn.player2ToString()}}</span>
+        </div>
     </div>
+</div>
+<div class="container-buttons">
 
 
-    <button (click)="play(rockValue)">
+    <button class="play-btn rock"
+        (click)="play(rockValue)">
         Rock
     </button>
 
-    <button (click)="play(paperValue)">
+    <button class="play-btn paper"
+        (click)="play(paperValue)">
         Paper
     </button>
 
-    <button (click)="play(scissorValue)">
+    <button class="play-btn scissor"
+        (click)="play(scissorValue)">
         Scissor
     </button>
 </div>

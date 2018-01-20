@@ -1,4 +1,4 @@
-import { AppPage } from './app.po';
+import { AppPage } from '../pages/app.po';
 
 describe('rps-game App', () => {
   let page: AppPage;
@@ -7,8 +7,8 @@ describe('rps-game App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display game message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Rock Paper Scissor game');
   });
 });

@@ -1,0 +1,58 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    &.title {
+        height: 200px;
+    }
+    &.result {
+        min-height: 134px;
+        margin: 35px 0px;
+        flex-direction: column;
+        .played {
+            font-weight: bold;
+        }
+        .turn-result-label {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 12px 0px;
+        }
+    }
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .play-btn {
+        flex-grow: 1;
+        padding: 12px;
+        margin: 5px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: white;
+        height: 65px;
+        cursor: pointer;
+        &.scissor {
+            background-color: #e67e22;
+            &:hover {
+                background-color: #d35400;
+            }
+        }
+        &.paper {
+            background-color: #3498db;
+            &:hover {
+                background-color: #2980b9;
+            }
+        }
+        &.rock {
+            background-color:  #95a5a6;
+            &:hover {
+                background-color: #7f8c8d;
+
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ import { Store } from '@ngrx/store';
 @Component({
     selector: 'app-rock-paper-scissor',
     templateUrl: './rock-paper-scissor.component.html',
+    styleUrls: ['./rock-paper-scissor.component.scss']
 })
 export class RockPaperScissorComponent {
 
